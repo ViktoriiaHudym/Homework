@@ -1,15 +1,20 @@
 import re
 def number(a):
     return bool(re.match('^[-+]*\d+$', a))
+
 def number(b):
     return bool(re.match('^[-+]*\d+$', b))
+
 def number_input():
-    a = input('Enter a: ')
+    a = input('Введіть ціле число a: ')
     while not number(a):
-        a = input("Enter again a: ")
-    b = input("Enter b: ")
+        a = input("Спробуте знову a: ")
+    b = input("Введіть ціле число b: ")
     while not number(b):
-        b = input("Enter again b: ")
+        b = input("Спробуйте знову b: ")
+    return main(a,b)
+
+def main(a,b):
     a = int(a)
     b = int(b)
     if a>b:
@@ -18,4 +23,5 @@ def number_input():
         return(b, b)
     else:
         return(0, 0)
-print(number_input())
+
+print('Отримана пара чисел:', number_input())
